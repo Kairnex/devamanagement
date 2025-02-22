@@ -100,7 +100,7 @@ buttons = [
     ],
 ]
 
-# List of image URLs or file IDs
+# Use Telegram File IDs instead of external URLs
 PHOTO_LIST = [
     "https://files.catbox.moe/xig0bf.jpg",
     "https://files.catbox.moe/oem0u4.jpg",
@@ -112,23 +112,10 @@ PHOTO_LIST = [
     "https://files.catbox.moe/qu3wo6.jpg",
     "https://files.catbox.moe/jt4k5s.jpg"
 ]
-
 def start(update: Update, context: CallbackContext):
     user = update.message.from_user.first_name
     bot_name = context.bot.first_name
-    photo = random.choice(PHOTO_LIST)  # Select a random photo
-
-    update.message.reply_photo(
-        photo=photo,
-        caption=PM_START_TEXT.format(user, bot_name),
-        parse_mode="Markdown",
-        reply_markup=InlineKeyboardMarkup(buttons),
-    )
-
-def start(update, context):
-    user = update.message.from_user.first_name
-    bot_name = context.bot.first_name
-    photo = random.choice(PHOTO_LIST)  # Select a random photo
+    photo = random.choice(PHOTO_LIST)  # Select a random image
 
     update.message.reply_photo(
         photo=photo,
