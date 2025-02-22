@@ -10,8 +10,8 @@
 
 <p align="center">
 <a href="https://github.com/kairnex/devamanagement/stargazers"><img src="https://img.shields.io/github/stars/kairnex/devamanagement?color=black&logo=github&logoColor=black&style=for-the-badge" alt="Stars"/></a>
-<a href="[https://github.com/AnonymousX1025/FallenRobot](https://github.com/kairnex/devamanagement)/network/members"> <img src="https://img.shields.io/github/forks/kairnex/devamanagement?color=black&logo=github&logoColor=black&style=for-the-badge"/></a>
-<a href="[https://github.com/AnonymousX1025/FallenRobot](https://github.com/kairnex/devamanagement)/blob/master/LICENSE"> <img src="https://img.shields.io/badge/License-MIT-blueviolet?style=for-the-badge" alt="License"/></a>
+<a href="[https://github.com/AnonymousX1025/Deva](https://github.com/kairnex/devamanagement)/network/members"> <img src="https://img.shields.io/github/forks/kairnex/devamanagement?color=black&logo=github&logoColor=black&style=for-the-badge"/></a>
+<a href="[https://github.com/AnonymousX1025/Deva](https://github.com/kairnex/devamanagement)/blob/master/LICENSE"> <img src="https://img.shields.io/badge/License-MIT-blueviolet?style=for-the-badge" alt="License"/></a>
 <a href="https://www.python.org/"> <img src="https://img.shields.io/badge/Written%20in-Python-skyblue?style=for-the-badge&logo=python" alt="Python"/></a>
 </p>
 
@@ -45,13 +45,13 @@
 - Install pip by :
 `sudo pip3 install -U pip`
 - Clone the repository by :
-`git clone https://github.com/AnonymousX1025/FallenRobot && cd FallenRobot`
+`git clone https://github.com/AnonymousX1025/Deva && cd Deva`
 - Install/Upgrade setuptools by :
 `pip3 install --upgrade pip setuptools`
 - Install requirements by :
 `pip3 install -U -r requirements.txt`
 - Fill your variables in config by :
-`vi FallenRobot/config.py`
+`vi Deva/config.py`
 
 Press `I` on the keyboard for editing config
 
@@ -59,7 +59,7 @@ Press `Ctrl+C` when you're done with editing config and `:wq` to save the config
 - Install tmux to keep running your bot when you close the terminal by :
 `sudo apt install tmux && tmux`
 - Finally run the bot by :
-`python3 -m FallenRobot`
+`python3 -m Deva`
 - For getting out from tmux session
 
 Press `Ctrl+b` and then `d`
