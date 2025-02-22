@@ -74,6 +74,7 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
+# Start Message
 PM_START_TEXT = """
 *ʜᴇʏ* {}, 🥀
 
@@ -81,47 +82,42 @@ PM_START_TEXT = """
 ➻ ᴛʜᴇ ᴍᴏsᴛ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.
 
 ──────────────────
-ᴀʟsᴏ ᴀ ɴᴇᴡ ғᴇᴀᴛᴜʀᴇ ᴏғ ʀᴇǫᴜᴇsᴛ ᴀᴄᴄᴇᴘᴛɪɴɢ ᴊᴜsᴛ ᴀᴅᴅ ɪɴ ɢʀᴏᴜᴘ ɪᴛ ᴡɪʟʟ ᴀᴄᴄᴇᴘᴛ ᴛʜᴇ ɴᴇᴡ ᴊᴏɪɴ ʀᴇǫᴜᴇsᴛ.
-
-──────────────────
 *๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs.*
 """
 
+# Buttons
 buttons = [
-    [InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
-    [InlineKeyboardButton(text="ʜᴇʟᴩ & ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_back")],
+    [InlineKeyboardButton(text="➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+    [InlineKeyboardButton(text="📜 ʜᴇʟᴩ & ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_back")],
     [
-        InlineKeyboardButton(text=" ᴀʙᴏᴜᴛ ", callback_data="fallen_"),
-        InlineKeyboardButton(text="sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text="📌 ᴀʙᴏᴜᴛ", callback_data="about_bot"),
+        InlineKeyboardButton(text="💬 sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
-        InlineKeyboardButton(text=" ᴅᴇᴠᴇʟᴏᴩᴇʀ ", url=f"tg://user?id={OWNER_ID}"),
-        InlineKeyboardButton(text=" sᴏᴜʀᴄᴇ ", callback_data="source_"),
+        InlineKeyboardButton(text="👤 ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"tg://user?id={OWNER_ID}"),
+        InlineKeyboardButton(text="🛠 sᴏᴜʀᴄᴇ", callback_data="source_code"),
     ],
 ]
 
-# Use Telegram File IDs instead of external URLs
+# Telegram File IDs for Photos (Get from @GetIDsBot)
 PHOTO_LIST = [
-    "https://files.catbox.moe/xig0bf.jpg",
-    "https://files.catbox.moe/oem0u4.jpg",
-    "https://files.catbox.moe/4ljnc5.jpg",
-    "https://files.catbox.moe/vu0tnb.jpg",
-    "https://files.catbox.moe/9rvr7y.jpg",
-    "https://files.catbox.moe/huu9bd.jpg",
-    "https://files.catbox.moe/aitppa.jpg",
-    "https://files.catbox.moe/qu3wo6.jpg",
+    "https://files.catbox.moe/xig0bf.jpg",    "https://files.catbox.moe/oem0u4.jpg",
+    "https://files.catbox.moe/4ljnc5.jpg",    "https://files.catbox.moe/vu0tnb.jpg",
+    "https://files.catbox.moe/9rvr7y.jpg",    "https://files.catbox.moe/huu9bd.jpg",
+    "https://files.catbox.moe/aitppa.jpg",    "https://files.catbox.moe/qu3wo6.jpg",
     "https://files.catbox.moe/jt4k5s.jpg"
 ]
+
 def start(update: Update, context: CallbackContext):
     user = update.message.from_user.first_name
     bot_name = context.bot.first_name
-    photo = random.choice(PHOTO_LIST)  # Select a random image
+    photo = random.choice(PHOTO_LIST)  # Random image selection
 
     update.message.reply_photo(
-        photo=photo,
-        caption=PM_START_TEXT.format(user, bot_name),
-        parse_mode="Markdown",
-        reply_markup=InlineKeyboardMarkup(buttons),
+        photo=photo,  # Send Photo
+        caption=PM_START_TEXT.format(user, bot_name),  # Message Text
+        parse_mode="MarkdownV2",  # Fix Markdown Issues
+        reply_markup=InlineKeyboardMarkup(buttons),  # Buttons
     )
 
 HELP_STRINGS = f"""
