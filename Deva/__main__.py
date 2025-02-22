@@ -46,7 +46,6 @@ from Deva.modules.helper_funcs.chat_status import is_user_admin
 from Deva.modules.helper_funcs.misc import paginate_modules
 from telegram.ext import Updater, Dispatcher
 
-from Deva.modules.join_request import join_request_handler 
 
 def main():
     updater = Updater(TOKEN, use_context=True)
