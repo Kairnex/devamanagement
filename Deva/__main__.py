@@ -78,22 +78,15 @@ PM_START_TEXT = """
 ➻ ᴛʜᴇ ᴍᴏsᴛ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.
 
 ──────────────────
-ᴀʟsᴏ ᴀ ɴᴇᴡ ғᴇᴀᴛᴜʀᴇ ᴏғ ʀᴇǫᴜᴇsᴛ ᴀᴄᴄᴇᴘᴛɪɴɢ ɪᴜsᴛ ᴀᴅᴅ ɪɴ ɢʀᴏᴜᴘ ɪᴛ ᴡɪʟʟ ᴀᴄᴇᴇᴘᴛ ᴛʜᴇ ɴᴇᴡ ɪᴏɪɴ ʀᴇǫᴜᴇsᴛ
+ᴀʟsᴏ ᴀ ɴᴇᴡ ғᴇᴀᴛᴜʀᴇ ᴏғ ʀᴇǫᴜᴇsᴛ ᴀᴄᴄᴇᴘᴛɪɴɢ ɪᴜsᴛ ᴀᴅᴅ ɪɴ ɢʀᴏᴜᴘ ɪᴛ ᴡɪʟʟ ᴀᴄᴄᴇᴘᴛ ᴛʜᴇ ɴᴇᴡ ᴊᴏɪɴ ʀᴇǫᴜᴇsᴛ
 
 ──────────────────
-*๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʜᴇʟᴩ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs.*
+*๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs.*
 """
 
 buttons = [
-    [
-        InlineKeyboardButton(
-            text="ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ",
-            url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
-        ),
-    ],
-    [
-        InlineKeyboardButton(text="ʜᴇʟᴩ & ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_back"),
-    ],
+    [InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+    [InlineKeyboardButton(text="ʜᴇʟᴩ & ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_back")],
     [
         InlineKeyboardButton(text=" ᴀʙᴏᴜᴛ ", callback_data="fallen_"),
         InlineKeyboardButton(text="sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
@@ -103,6 +96,32 @@ buttons = [
         InlineKeyboardButton(text=" sᴏᴜʀᴄᴇ ", callback_data="source_"),
     ],
 ]
+
+# List of image URLs or file IDs
+PHOTO_LIST = [
+    "https://files.catbox.moe/xig0bf.jpg",
+    "https://files.catbox.moe/oem0u4.jpg",
+    "https://files.catbox.moe/4ljnc5.jpg",
+    "https://files.catbox.moe/vu0tnb.jpg",
+    "https://files.catbox.moe/9rvr7y.jpg",
+    "https://files.catbox.moe/huu9bd.jpg",
+    "https://files.catbox.moe/aitppa.jpg",
+    "https://files.catbox.moe/qu3wo6.jpg",
+    "https://files.catbox.moe/jt4k5s.jpg"
+    # You can add more links or use file IDs from Telegram
+]
+
+def start(update, context):
+    user = update.message.from_user.first_name
+    bot_name = context.bot.first_name
+    photo = random.choice(PHOTO_LIST)  # Select a random photo
+
+    update.message.reply_photo(
+        photo=photo,
+        caption=PM_START_TEXT.format(user, bot_name),
+        parse_mode="Markdown",
+        reply_markup=InlineKeyboardMarkup(buttons),
+    )
 
 HELP_STRINGS = f"""
 *» {BOT_NAME} ᴇxᴄʟᴜsɪᴠᴇ ꜰᴇᴀᴛᴜʀᴇs*
