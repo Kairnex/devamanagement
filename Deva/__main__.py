@@ -90,21 +90,25 @@ buttons = [
     [InlineKeyboardButton(text="➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ɢʀᴏᴜᴘ", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
     [InlineKeyboardButton(text="📜 ʜᴇʟᴩ & ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_back")],
     [
-        InlineKeyboardButton(text="📌 ᴀʙᴏᴜᴛ", callback_data="about_bot"),
+        InlineKeyboardButton(text="📌 ᴀʙᴏᴜᴛ", callback_data="fallen_"),
         InlineKeyboardButton(text="💬 sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
         InlineKeyboardButton(text="👤 ᴅᴇᴠᴇʟᴏᴩᴇʀ", url=f"tg://user?id={OWNER_ID}"),
-        InlineKeyboardButton(text="🛠 sᴏᴜʀᴄᴇ", callback_data="source_code"),
+        InlineKeyboardButton(text="🛠 sᴏᴜʀᴄᴇ", callback_data="source_"),
     ],
 ]
 
 # Telegram File IDs for Photos (Get from @GetIDsBot)
 PHOTO_LIST = [
-    "https://files.catbox.moe/xig0bf.jpg",    "https://files.catbox.moe/oem0u4.jpg",
-    "https://files.catbox.moe/4ljnc5.jpg",    "https://files.catbox.moe/vu0tnb.jpg",
-    "https://files.catbox.moe/9rvr7y.jpg",    "https://files.catbox.moe/huu9bd.jpg",
-    "https://files.catbox.moe/aitppa.jpg",    "https://files.catbox.moe/qu3wo6.jpg",
+    "https://files.catbox.moe/xig0bf.jpg", 
+    "https://files.catbox.moe/oem0u4.jpg",
+    "https://files.catbox.moe/4ljnc5.jpg", 
+    "https://files.catbox.moe/vu0tnb.jpg",
+    "https://files.catbox.moe/9rvr7y.jpg",  
+    "https://files.catbox.moe/huu9bd.jpg",
+    "https://files.catbox.moe/aitppa.jpg",  
+    "https://files.catbox.moe/qu3wo6.jpg",
     "https://files.catbox.moe/jt4k5s.jpg"
 ]
 
