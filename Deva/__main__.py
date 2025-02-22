@@ -47,18 +47,6 @@ from Deva.modules.helper_funcs.misc import paginate_modules
 from telegram.ext import Updater, Dispatcher
 
 
-def main():
-    updater = Updater(TOKEN, use_context=True)
-    dispatcher = updater.dispatcher
-
-    dispatcher.add_handler(join_request_handler)  
-
-    updater.start_polling()
-    updater.idle()
-
-if __name__ == "__main__":
-    main()
-
 
 def get_readable_time(seconds: int) -> str:
     count = 0
