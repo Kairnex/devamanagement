@@ -26,8 +26,8 @@ from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 from telethon import __version__ as tlhver
 
-import FallenRobot.modules.sql.users_sql as sql
-from FallenRobot import (
+import Deva.modules.sql.users_sql as sql
+from Deva import (
     BOT_NAME,
     BOT_USERNAME,
     LOGGER,
@@ -41,12 +41,12 @@ from FallenRobot import (
     telethn,
     updater,
 )
-from FallenRobot.modules import ALL_MODULES
-from FallenRobot.modules.helper_funcs.chat_status import is_user_admin
-from FallenRobot.modules.helper_funcs.misc import paginate_modules
+from Deva.modules import ALL_MODULES
+from Deva.modules.helper_funcs.chat_status import is_user_admin
+from Deva.modules.helper_funcs.misc import paginate_modules
 from telegram.ext import Updater, Dispatcher
 
-from FallenRobot.modules.join_request import join_request_handler 
+from Deva.modules.join_request import join_request_handler 
 
 def main():
     updater = Updater(TOKEN, use_context=True)
