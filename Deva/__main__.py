@@ -44,6 +44,9 @@ from Deva import (
 from Deva.modules import ALL_MODULES
 from Deva.modules.helper_funcs.chat_status import is_user_admin
 from Deva.modules.helper_funcs.misc import paginate_modules
+import random
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram.ext import CallbackContext
 
 
 def get_readable_time(seconds: int) -> str:
@@ -78,7 +81,7 @@ PM_START_TEXT = """
 ➻ ᴛʜᴇ ᴍᴏsᴛ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.
 
 ──────────────────
-ᴀʟsᴏ ᴀ ɴᴇᴡ ғᴇᴀᴛᴜʀᴇ ᴏғ ʀᴇǫᴜᴇsᴛ ᴀᴄᴄᴇᴘᴛɪɴɢ ɪᴜsᴛ ᴀᴅᴅ ɪɴ ɢʀᴏᴜᴘ ɪᴛ ᴡɪʟʟ ᴀᴄᴄᴇᴘᴛ ᴛʜᴇ ɴᴇᴡ ᴊᴏɪɴ ʀᴇǫᴜᴇsᴛ
+ᴀʟsᴏ ᴀ ɴᴇᴡ ғᴇᴀᴛᴜʀᴇ ᴏғ ʀᴇǫᴜᴇsᴛ ᴀᴄᴄᴇᴘᴛɪɴɢ ᴊᴜsᴛ ᴀᴅᴅ ɪɴ ɢʀᴏᴜᴘ ɪᴛ ᴡɪʟʟ ᴀᴄᴄᴇᴘᴛ ᴛʜᴇ ɴᴇᴡ ᴊᴏɪɴ ʀᴇǫᴜᴇsᴛ.
 
 ──────────────────
 *๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʜᴇʟᴘ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs.*
@@ -108,8 +111,19 @@ PHOTO_LIST = [
     "https://files.catbox.moe/aitppa.jpg",
     "https://files.catbox.moe/qu3wo6.jpg",
     "https://files.catbox.moe/jt4k5s.jpg"
-    # You can add more links or use file IDs from Telegram
 ]
+
+def start(update: Update, context: CallbackContext):
+    user = update.message.from_user.first_name
+    bot_name = context.bot.first_name
+    photo = random.choice(PHOTO_LIST)  # Select a random photo
+
+    update.message.reply_photo(
+        photo=photo,
+        caption=PM_START_TEXT.format(user, bot_name),
+        parse_mode="Markdown",
+        reply_markup=InlineKeyboardMarkup(buttons),
+    )
 
 def start(update, context):
     user = update.message.from_user.first_name
