@@ -1,4 +1,3 @@
-
 import importlib
 import re
 import time
@@ -26,7 +25,7 @@ from telegram.ext import (
 from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 from telethon import __version__ as tlhver
-
+from telegram.ext import CallbackQueryHandler, Updater, CommandHandler, CallbackContext
 import Deva.modules.sql.users_sql as sql
 from Deva import (
     BOT_NAME,
