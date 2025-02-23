@@ -27,8 +27,8 @@ from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 from telethon import __version__ as tlhver
 
-import Devḁ.modules.sql.users_sql as sql
-from Devḁ import (
+import Deva.modules.sql.users_sql as sql
+from Deva import (
     BOT_NAME,
     BOT_USERNAME,
     LOGGER,
@@ -42,9 +42,9 @@ from Devḁ import (
     telethn,
     updater,
 )
-from Devḁ.modules import ALL_MODULES
-from Devḁ.modules.helper_funcs.chat_status import is_user_admin
-from Devḁ.modules.helper_funcs.misc import paginate_modules
+from Deva.modules import ALL_MODULES
+from Deva.modules.helper_funcs.chat_status import is_user_admin
+from Deva.modules.helper_funcs.misc import paginate_modules
 
 
 def get_readable_time(seconds: int) -> str:
