@@ -27,8 +27,8 @@ from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 from telethon import __version__ as tlhver
 
-import Devar̥.modules.sql.users_sql as sql
-from Devar̥ import (
+import Devḁ.modules.sql.users_sql as sql
+from Devḁ import (
     BOT_NAME,
     BOT_USERNAME,
     LOGGER,
@@ -42,9 +42,9 @@ from Devar̥ import (
     telethn,
     updater,
 )
-from Devar̥.modules import ALL_MODULES
-from Devar̥.modules.helper_funcs.chat_status import is_user_admin
-from Devar̥.modules.helper_funcs.misc import paginate_modules
+from Devḁ.modules import ALL_MODULES
+from Devḁ.modules.helper_funcs.chat_status import is_user_admin
+from Devḁ.modules.helper_funcs.misc import paginate_modules
 
 
 def get_readable_time(seconds: int) -> str:
@@ -121,7 +121,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("Devar̥.modules." + module_name)
+    imported_module = importlib.import_module("Devḁ.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -445,7 +445,7 @@ def Source_about_callback(update: Update, context: CallbackContext):
 ᴀɴᴅ ᴜsɪɴɢ [sǫʟᴀʟᴄʜᴇᴍʏ](https://www.sqlalchemy.org) ᴀɴᴅ [ᴍᴏɴɢᴏ](https://cloud.mongodb.com) ᴀs ᴅᴀᴛᴀʙᴀsᴇ.
 
 
-*ʜᴇʀᴇ ɪs ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ :* [ɢɪᴛʜᴜʙ](https://github.com/kairnex/Devar̥)
+*ʜᴇʀᴇ ɪs ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ :* [ɢɪᴛʜᴜʙ](https://github.com/kairnex/Devḁ)
 
 
 {BOT_NAME} ɪs ʟɪᴄᴇɴsᴇᴅ ᴜɴᴅᴇʀ ᴛʜᴇ [ᴍɪᴛ ʟɪᴄᴇɴsᴇ](https://github.com/kairnex/Deva/blob/master/LICENSE).
