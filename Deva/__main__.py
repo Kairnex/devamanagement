@@ -1,3 +1,4 @@
+
 import importlib
 import re
 import time
@@ -26,8 +27,8 @@ from telegram.ext.dispatcher import DispatcherHandlerStop
 from telegram.utils.helpers import escape_markdown
 from telethon import __version__ as tlhver
 
-import Deva.modules.sql.users_sql as sql
-from Deva import (
+import Devar̥.modules.sql.users_sql as sql
+from Devar̥ import (
     BOT_NAME,
     BOT_USERNAME,
     LOGGER,
@@ -41,11 +42,9 @@ from Deva import (
     telethn,
     updater,
 )
-from Deva.modules import ALL_MODULES
-from Deva.modules.helper_funcs.chat_status import is_user_admin
-from Deva.modules.helper_funcs.misc import paginate_modules
-from telegram.ext import Updater, Dispatcher
-
+from Devar̥.modules import ALL_MODULES
+from Devar̥.modules.helper_funcs.chat_status import is_user_admin
+from Devar̥.modules.helper_funcs.misc import paginate_modules
 
 
 def get_readable_time(seconds: int) -> str:
@@ -77,7 +76,7 @@ PM_START_TEXT = """
 *ʜᴇʏ* {}, 🥀
 
 *๏ ᴛʜɪs ɪs* {} !
-➻ ᴛʜᴇ ᴍᴏsᴛ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.
+➻ ᴛʜᴇ ᴍᴏsᴛ ᴩᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ɢʀᴏᴜᴩ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ᴀɴᴅ ᴜsᴇғᴜʟ ғᴇᴀᴛᴜʀᴇs.\nᴀʟsᴏ ᴀ ɴᴇᴡ ғᴇᴀᴛᴜʀᴇ ᴏғ ʀᴇǫᴜᴇsᴛ ᴀᴄᴄᴇᴘᴛɪɴɢ ɪᴜsᴛ ᴀᴅᴅ ɪɴ ɢʀᴏᴜᴘ ɪᴛ ᴡɪʟʟ ᴀᴄᴇᴇᴘᴛ ᴛʜᴇ ɴᴇᴡ ɪᴏɪɴ ʀᴇǫᴜᴇsᴛ
 
 ──────────────────
 *๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʜᴇʟᴩ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs.*
@@ -94,8 +93,8 @@ buttons = [
         InlineKeyboardButton(text="ʜᴇʟᴩ & ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="ᴀʙᴏᴜᴛ ", callback_data="fallen_"),
-        InlineKeyboardButton(text="sᴜᴩᴩᴏʀᴛ", url=f"https://t.me/{SUPPORT_CHAT}"),
+        InlineKeyboardButton(text=" ᴀʙᴏᴜᴛ ", callback_data="fallen_"),
+        InlineKeyboardButton(text=" sᴜᴩᴩᴏʀᴛ ", url=f"https://t.me/{SUPPORT_CHAT}"),
     ],
     [
         InlineKeyboardButton(text=" ᴅᴇᴠᴇʟᴏᴩᴇʀ ", url=f"tg://user?id={OWNER_ID}"),
@@ -122,7 +121,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("Deva.modules." + module_name)
+    imported_module = importlib.import_module("Devar̥.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -206,7 +205,7 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_sticker(
-                "CAACAgUAAxkBAAJYsmLWRvm70cE-mmxSNCovEf4v1ueJAAIcCAACbMK4VuL4EmZEkq8WKQQ"
+                "CAACAgQAAxkBAAIRnGe3E4-PSeyNigXxhQqCB-MFQIW0AAKiFAACW6y4UCBm6-HCDGbUHgQ"
             )
             update.effective_message.reply_text(
                 PM_START_TEXT.format(escape_markdown(first_name), BOT_NAME),
@@ -411,7 +410,7 @@ def Fallen_about_callback(update: Update, context: CallbackContext):
                         ),
                         InlineKeyboardButton(
                             text="ɢɪᴛʜᴜʙ",
-                            url="https://github.com/AnonymousX1025",
+                            url="https://github.com/kairnex",
                         ),
                     ],
                     [
@@ -446,10 +445,10 @@ def Source_about_callback(update: Update, context: CallbackContext):
 ᴀɴᴅ ᴜsɪɴɢ [sǫʟᴀʟᴄʜᴇᴍʏ](https://www.sqlalchemy.org) ᴀɴᴅ [ᴍᴏɴɢᴏ](https://cloud.mongodb.com) ᴀs ᴅᴀᴛᴀʙᴀsᴇ.
 
 
-*ʜᴇʀᴇ ɪs ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ :* [ɢɪᴛʜᴜʙ](https://github.com/AnonymousX1025/Deva)
+*ʜᴇʀᴇ ɪs ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ :* [ɢɪᴛʜᴜʙ](https://github.com/kairnex/Devar̥)
 
 
-{BOT_NAME} ɪs ʟɪᴄᴇɴsᴇᴅ ᴜɴᴅᴇʀ ᴛʜᴇ [ᴍɪᴛ ʟɪᴄᴇɴsᴇ](https://github.com/AnonymousX1025/Deva/blob/master/LICENSE).
+{BOT_NAME} ɪs ʟɪᴄᴇɴsᴇᴅ ᴜɴᴅᴇʀ ᴛʜᴇ [ᴍɪᴛ ʟɪᴄᴇɴsᴇ](https://github.com/kairnex/Deva/blob/master/LICENSE).
 © 2022 - 2023 | [sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ](https://t.me/{SUPPORT_CHAT}), ᴀʟʟ ʀɪɢʜᴛs ʀᴇsᴇʀᴠᴇᴅ.
 """,
             parse_mode=ParseMode.MARKDOWN,
@@ -763,6 +762,7 @@ def main():
     dispatcher.add_handler(help_callback_handler)
     dispatcher.add_handler(settings_callback_handler)
     dispatcher.add_handler(migrate_handler)
+
     dispatcher.add_error_handler(error_callback)
 
     LOGGER.info("Using long polling.")
